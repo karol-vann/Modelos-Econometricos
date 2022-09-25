@@ -1,0 +1,2 @@
+# Modelos-Econometricos
+Modelo mincer
