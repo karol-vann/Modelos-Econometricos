@@ -19,7 +19,7 @@ def age(x):
     #APLICAR FUNCION A DATAFRAME
 dataB["P6030S3"]=dataB["P6030S3"].apply(age)
 dataB["P6020"]=dataB["P6020"].replace([2.0],0)
-dataB["exper"] = (dataB["P6030S3"]**2)
+dataB["exper"] = (dataB["P6040"]**2)
 print(dataB)
 #dropna
 muestra_nan= dataB.dropna()
@@ -27,11 +27,11 @@ print(dataB)
 
 #test hallar coef
 y_test= muestra_nan["P6500"]
-x_test= muestra_nan[["P6030S3","P6020","ESC","P6040","exper"]]
+x_test= muestra_nan[["P6020","ESC","P6040","exper"]]
 
 #train entrenar las variables
 y_train= muestra_nan["P6500"]
-x_train= muestra_nan[["P6030S3","P6020","ESC","P6040","exper"]]
+x_train= muestra_nan[["P6020","ESC","P6040","exper"]]
 
 #Regresion
 reg=linear_model.LinearRegression()
